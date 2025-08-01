@@ -16,6 +16,13 @@
       "destination": "/jrbond.com/$1"
     }
   ],
+  "redirects": [
+    {
+      "source": "https://www.jrbond.com/:path*",
+      "destination": "https://jrbond.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
