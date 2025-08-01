@@ -6,14 +6,14 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/",
-      "dest": "/jrbond.com/index.html"
+      "source": "/",
+      "destination": "/jrbond.com/index.html"
     },
     {
-      "src": "/(.*)",
-      "dest": "/jrbond.com/$1"
+      "source": "/(.*)",
+      "destination": "/jrbond.com/$1"
     }
   ],
   "headers": [
