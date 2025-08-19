@@ -4,10 +4,6 @@
     {
       "src": "jrbond.com/**/*",
       "use": "@vercel/static"
-    },
-    {
-      "src": "framerusercontent.com/**/*",
-      "use": "@vercel/static"
     }
   ],
   "rewrites": [
