@@ -1,0 +1,2 @@
+function a(e,t){return{description:"Hi! Jonathan Bond here - I live in Arizona and have 12+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love.",favicon:"https://framerusercontent.com/assets/UW0H2OtQl7EdKLqyhQs26GI2Y.png",robots:"max-image-preview:large",socialImage:"https://framerusercontent.com/assets/sugka9Y0KJVCSvGM8qQXDxsIO8.jpeg",title:"Jonathan Bond - Product and Design Leader"}}export{a};
+//# sourceMappingURL=chunk-RNDNSVAS.mjs.map
