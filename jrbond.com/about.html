@@ -12,7 +12,7 @@
     <title>Jonathan Bond - About</title>
     <meta
       name="description"
-      content="Hi! Jonathan Bond here - I live in Arizona and have 12+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
+      content="Hi! Jonathan Bond here - I live in Arizona and have 14+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
     />
     <meta
       name="framer-search-index"
@@ -28,7 +28,7 @@
     <meta property="og:title" content="Jonathan Bond - About" />
     <meta
       property="og:description"
-      content="Hi! Jonathan Bond here - I live in Arizona and have 12+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
+      content="Hi! Jonathan Bond here - I live in Arizona and have 14+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
     />
     <meta
       property="og:image"
@@ -39,7 +39,7 @@
     <meta name="twitter:title" content="Jonathan Bond - About" />
     <meta
       name="twitter:description"
-      content="Hi! Jonathan Bond here - I live in Arizona and have 12+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
+      content="Hi! Jonathan Bond here - I live in Arizona and have 14+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
     />
     <meta
       name="twitter:image"
@@ -4432,7 +4432,7 @@
                   class="framer-text framer-styles-preset-a0uz82"
                   data-styles-preset="nU1EQBrG_"
                 >
-                  Product and design leader with over 12 years of experience
+                  Product and design leader with over 14 years of experience
                   specializing in
                   <span
                     style="
@@ -6662,6 +6662,35 @@
         contain: strict;
       "
     ></div>
+
+    <!-- Footer note: added after hydration so the server-rendered footer
+         stays untouched for React. -->
+    <script>
+      (function () {
+        function addNote() {
+          var ps = document.querySelectorAll("footer p");
+          var added = false;
+          for (var i = 0; i < ps.length; i++) {
+            if (ps[i].textContent.indexOf("jrbond.com") === -1) continue;
+            if (ps[i].parentElement.querySelector(".built-with-claude-note")) { added = true; continue; }
+            var note = ps[i].cloneNode(false);
+            note.className += " built-with-claude-note";
+            note.textContent = "This site was designed and built in code with Claude Code.";
+            note.style.marginTop = "8px";
+            note.style.fontSize = "14px";
+            note.style.color = "rgb(79, 79, 79)";
+            ps[i].parentElement.appendChild(note);
+            added = true;
+          }
+          return added;
+        }
+        var tries = 0;
+        var timer = setInterval(function () {
+          tries += 1;
+          if (addNote() || tries > 80) clearInterval(timer);
+        }, 300);
+      })();
+    </script>
     <!-- Start of bodyEnd -->
 
     <!-- End of bodyEnd -->

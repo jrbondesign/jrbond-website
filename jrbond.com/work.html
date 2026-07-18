@@ -12,7 +12,7 @@
     <title>Jonathan Bond - Work</title>
     <meta
       name="description"
-      content="Hi! Jonathan Bond here - I live in Arizona and have 12+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
+      content="Hi! Jonathan Bond here - I live in Arizona and have 14+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
     />
     <meta
       name="framer-search-index"
@@ -28,7 +28,7 @@
     <meta property="og:title" content="Jonathan Bond - Work" />
     <meta
       property="og:description"
-      content="Hi! Jonathan Bond here - I live in Arizona and have 12+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
+      content="Hi! Jonathan Bond here - I live in Arizona and have 14+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
     />
     <meta
       property="og:image"
@@ -39,7 +39,7 @@
     <meta name="twitter:title" content="Jonathan Bond - Work" />
     <meta
       name="twitter:description"
-      content="Hi! Jonathan Bond here - I live in Arizona and have 12+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
+      content="Hi! Jonathan Bond here - I live in Arizona and have 14+ years of experience working as a product and design leader. I have a passion for building great teams that create products that customers and businesses love."
     />
     <meta
       name="twitter:image"
@@ -4221,7 +4221,7 @@
                   class="framer-text framer-styles-preset-a0uz82"
                   data-styles-preset="nU1EQBrG_"
                 >
-                  Below you will find selected work from my 12+ years of product
+                  Below you will find selected work from my 14+ years of product
                   and design leadership. Enjoy!
                 </p>
               </div>
@@ -4274,7 +4274,7 @@
                   class="framer-text framer-styles-preset-a0uz82"
                   data-styles-preset="nU1EQBrG_"
                 >
-                  Below you will find selected work from my 12+ years of product
+                  Below you will find selected work from my 14+ years of product
                   and design leadership. Enjoy!
                 </p>
               </div>
@@ -4327,7 +4327,7 @@
                   class="framer-text framer-styles-preset-a0uz82"
                   data-styles-preset="nU1EQBrG_"
                 >
-                  Below you will find selected work from my 12+ years of product
+                  Below you will find selected work from my 14+ years of product
                   and design leadership. Enjoy!
                 </p>
               </div>
@@ -7109,6 +7109,76 @@
         contain: strict;
       "
     ></div>
+
+    <!-- New case studies (Pemly, Ward Signup): cards are injected after
+         Framer hydration finishes so the server-rendered DOM stays untouched
+         for React. Cards are cloned from the live Busy Bees card to inherit
+         the exact rendered styles. -->
+    <script>
+      (function () {
+        var CARDS = [
+          {
+            href: "designing-slack-for-the-trades.html",
+            img: "/images/pemly-hero.png",
+            alt: "Pemly, an AI-powered job communication app for home-service crews",
+            title: "Designing Slack for the Trades, Solo, in Code",
+            desc: "I designed and built Pemly, an AI-powered job communication app for home-service crews, without opening Figma once."
+          },
+          {
+            href: "one-signup-tool-three-products.html",
+            img: "/images/wardsignup-hero.png",
+            alt: "Ward Signup, a zero-login scheduling tool for ward secretaries",
+            title: "Shipped Solo: How One Signup Tool Became Three Products",
+            desc: "I designed, built, and shipped a scheduling tool for ward secretaries using Claude Code. Then the same foundation shipped twice more."
+          }
+        ];
+        function findCardByTitle(text) {
+          var h4s = document.querySelectorAll("h4");
+          for (var i = 0; i < h4s.length; i++) {
+            if (h4s[i].textContent.indexOf(text) === -1) continue;
+            var node = h4s[i];
+            while (node && node !== document.body) {
+              if (node.getAttribute && node.getAttribute("data-framer-name") === "Case Study") return node;
+              node = node.parentElement;
+            }
+          }
+          return null;
+        }
+        function inject() {
+          if (findCardByTitle(CARDS[0].title)) return true;
+          var card = findCardByTitle("Boosting Revenue");
+          if (!card || !card.parentElement) return false;
+          if (parseFloat(getComputedStyle(card).opacity) < 0.9) return false;
+          for (var i = 0; i < CARDS.length; i++) {
+            var spec = CARDS[i];
+            var clone = card.cloneNode(true);
+            clone.removeAttribute("data-framer-appear-id");
+            clone.style.opacity = "1";
+            clone.style.transform = "none";
+            var img = clone.querySelector("img");
+            if (img) {
+              img.removeAttribute("srcset");
+              img.removeAttribute("sizes");
+              img.src = spec.img;
+              img.alt = spec.alt;
+            }
+            var h4 = clone.querySelector("h4");
+            if (h4) h4.textContent = spec.title;
+            var ps = clone.querySelectorAll("p");
+            if (ps.length) ps[0].textContent = spec.desc;
+            var links = clone.querySelectorAll("a");
+            for (var j = 0; j < links.length; j++) links[j].setAttribute("href", spec.href);
+            card.parentElement.insertBefore(clone, card);
+          }
+          return true;
+        }
+        var tries = 0;
+        var timer = setInterval(function () {
+          tries += 1;
+          if (inject() || tries > 80) clearInterval(timer);
+        }, 250);
+      })();
+    </script>
     <!-- Start of bodyEnd -->
 
     <!-- End of bodyEnd -->

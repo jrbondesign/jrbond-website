@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Jonathan Bond - Work - Pemly</title>
+    <meta
+      name="description"
+      content="I designed and built Pemly, an AI-powered job communication app for home-service crews, without opening Figma once."
+    />
+    <link rel="icon" href="/images/UW0H2OtQl7EdKLqyhQs26GI2Y.png" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jonathan Bond - Work - Pemly" />
+    <meta
+      property="og:description"
+      content="I designed and built Pemly, an AI-powered job communication app for home-service crews, without opening Figma once."
+    />
+    <meta property="og:image" content="/images/pemly-hero.png" />
+    <meta property="og:url" content="https://jrbond.com/designing-slack-for-the-trades" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jonathan Bond - Work - Pemly" />
+    <meta
+      name="twitter:description"
+      content="I designed and built Pemly, an AI-powered job communication app for home-service crews, without opening Figma once."
+    />
+    <meta name="twitter:image" content="/images/pemly-hero.png" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RQP6FPG44H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-RQP6FPG44H");
+    </script>
+
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="canonical" href="designing-slack-for-the-trades.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: #242527;
+        font-family: "Inter", "Inter Placeholder", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 40px 40px 24px;
+        background: #ffffff;
+      }
+      .nav .logo {
+        font-family: "Manrope", "Manrope Placeholder", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 36px;
+        color: #242527;
+        text-decoration: none;
+      }
+      .nav .links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 48px;
+      }
+      .nav .links a {
+        font-size: 18px;
+        line-height: 27px;
+        color: #242527;
+        text-decoration: none;
+      }
+      .nav .links a:hover {
+        text-decoration: underline;
+      }
+      .nav .contact-pill {
+        font-size: 18px;
+        line-height: 24px;
+        color: #242527;
+        text-decoration: none;
+        background: #ededed;
+        border-radius: 32px;
+        padding: 14px 24px;
+      }
+      .nav .contact-pill:hover {
+        background: #e0e0e0;
+      }
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+      .hero {
+        padding-top: 220px;
+      }
+      h1 {
+        font-family: "Manrope", "Manrope Placeholder", sans-serif;
+        font-size: 72px;
+        font-weight: 500;
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+        margin: 0 0 40px;
+        max-width: 1100px;
+      }
+      .subtitle {
+        font-family: "Manrope", "Manrope Placeholder", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 36px;
+        color: #4f4f4f;
+        margin: 0 0 56px;
+        max-width: 1100px;
+      }
+      .meta {
+        display: grid;
+        grid-template-columns: 190px 220px 200px minmax(0, 1fr);
+        gap: 40px 64px;
+        margin-bottom: 72px;
+      }
+      .meta .label {
+        font-size: 16px;
+        line-height: 24px;
+        color: #4f4f4f;
+        margin: 0 0 16px;
+      }
+      .meta p {
+        font-size: 18px;
+        line-height: 27px;
+        margin: 0 0 12px;
+      }
+      .shot {
+        margin: 32px 0 64px;
+      }
+      .shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid #d9d9d9;
+        border-radius: 16px;
+      }
+      section.copy {
+        max-width: 1100px;
+        margin: 0 0 48px;
+      }
+      h3 {
+        font-family: "Manrope", "Manrope Placeholder", sans-serif;
+        font-size: 44px;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 48px 0 24px;
+      }
+      section.copy p {
+        font-size: 18px;
+        line-height: 27px;
+        color: #4f4f4f;
+        margin: 0 0 24px;
+      }
+      section.copy strong {
+        color: #242527;
+        font-weight: 600;
+      }
+      section.copy a {
+        color: #242527;
+        text-decoration: underline;
+      }
+      .footer {
+        margin-top: 96px;
+        border-top: 1px solid #ededed;
+        padding: 96px 0 48px;
+      }
+      .footer .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 48px;
+        flex-wrap: wrap;
+      }
+      .footer h2 {
+        font-family: "Manrope", "Manrope Placeholder", sans-serif;
+        font-size: 56px;
+        font-weight: 400;
+        line-height: 1.15;
+        margin: 0 0 40px;
+      }
+      .footer .say-hello {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 24px;
+        color: #242527;
+        text-decoration: none;
+        background: #ededed;
+        border-radius: 32px;
+        padding: 14px 24px;
+      }
+      .footer .say-hello:hover {
+        background: #e0e0e0;
+      }
+      .footer .social {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 32px;
+      }
+      .footer .social a {
+        font-size: 18px;
+        line-height: 27px;
+        color: #242527;
+        text-decoration: none;
+      }
+      .footer .social a:hover {
+        text-decoration: underline;
+      }
+      .footer .copyright {
+        margin-top: 72px;
+        font-size: 18px;
+        line-height: 27px;
+        color: #242527;
+      }
+      .built-note {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 21px;
+        color: #4f4f4f;
+      }
+      @media (max-width: 809px) {
+        .nav {
+          padding: 20px 24px 16px;
+        }
+        .nav .links {
+          position: static;
+          transform: none;
+          gap: 24px;
+        }
+        .nav .contact-pill {
+          padding: 10px 18px;
+          font-size: 16px;
+        }
+        .container {
+          padding: 0 24px;
+        }
+        .hero {
+          padding-top: 140px;
+        }
+        h1 {
+          font-size: 40px;
+        }
+        .subtitle {
+          font-size: 20px;
+          line-height: 30px;
+        }
+        .meta {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .nav .logo {
+          font-size: 20px;
+          line-height: 28px;
+          white-space: nowrap;
+        }
+        h3 {
+          font-size: 30px;
+        }
+        .footer h2 {
+          font-size: 40px;
+        }
+        .footer .social {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="logo" href="index.html">Jonathan Bond</a>
+      <div class="links">
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+      </div>
+      <a class="contact-pill" href="contact.html">Contact</a>
+    </nav>
+
+    <main class="container">
+      <header class="hero">
+        <h1>Designing Slack for the Trades, Solo, in Code</h1>
+        <p class="subtitle">
+          I designed and built Pemly, an AI-powered job communication app for
+          home-service crews, without opening Figma once.
+        </p>
+        <div class="meta">
+          <div>
+            <p class="label">COMPANY</p>
+            <p>Pemly (personal product)</p>
+          </div>
+          <div>
+            <p class="label">MY ROLE</p>
+            <p>Designer, Builder, Founder</p>
+          </div>
+          <div>
+            <p class="label">TEAM</p>
+            <p>Me and Claude Code</p>
+          </div>
+          <div>
+            <p class="label">RESULTS</p>
+            <p>Live in private beta at pemly.app</p>
+            <p>
+              Working auth and job channels, with a fully prototyped AI
+              assistant experience
+            </p>
+            <p>Designed entirely in code</p>
+            <p>Built for users I've designed for professionally for years</p>
+          </div>
+        </div>
+      </header>
+
+      <figure class="shot">
+        <img
+          src="/images/pemly-hero.png"
+          alt="Pemly main app view with a sidebar of job channels and an open job channel"
+        />
+      </figure>
+
+      <section class="copy">
+        <h3>Executive Summary</h3>
+        <p>
+          Pemly is Slack for home-service teams, powered by AI. Every job gets
+          its own channel where the crew, the office, and an AI assistant stay
+          in sync. A delayed liner delivery doesn't turn into an angry customer
+          call three days later.
+        </p>
+        <p>
+          I know this problem personally. Some of my closest friends work in
+          the trades, and I've designed for home-service businesses for years
+          at Thryv and Keap. The job isn't what breaks. The communication is.
+          Updates get buried in personal texts. Photos scatter across six
+          phones. The owner spends evenings stitching the day back together. I
+          built Pemly to fix that, entirely in code with Claude Code. It's live
+          in private beta now.
+        </p>
+      </section>
+
+      <section class="copy">
+        <h3>The Real Problem</h3>
+        <p>
+          <strong>Background</strong>: Home-service teams run their jobs
+          through texts, voicemails, and group chats. The truth about any job
+          lives in six places, and the office usually hears about a problem
+          from the angry customer, not the crew.
+        </p>
+        <p>
+          <strong>The catch</strong>: These are people working from a truck,
+          not a desk. Anything that requires training or behavior change is
+          dead on arrival. The bar wasn't "better than Slack." It was "as easy
+          as the group text they already use, but organized around the job."
+        </p>
+      </section>
+
+      <figure class="shot">
+        <img
+          src="/images/pemly-channel.png"
+          alt="A Pemly job channel conversation with crew posts, office posts, and the Pemly Assistant participating"
+        />
+      </figure>
+
+      <section class="copy">
+        <h3>Designing Around the Job, Not the Topic</h3>
+        <p>
+          <strong>One channel per job.</strong> Channels aren't organized by
+          topic like Slack. Every channel is a job. Crew, office, customer
+          details, photos, and history all live where the work lives. When a
+          callback shows up eight months later, the whole job history is one
+          search away.
+        </p>
+        <p>
+          <strong>The crew posts like they text.</strong> If you can send a
+          text, you can use Pemly on day one. Updates, photos, and questions go
+          up in seconds from any phone. No training, no manuals. That's the
+          adoption strategy.
+        </p>
+        <p>
+          <strong>AI that moves work forward.</strong> Pemly Assistant reads
+          what's happening on each job and does the busywork that usually lands
+          on the owner at night. It summarizes the day, flags delays before
+          they blow up, and drafts the customer update for the office to
+          approve. It's not a chatbot bolted on. It's a teammate in the
+          channel.
+        </p>
+        <p>
+          <strong>The human/AI handoff.</strong> The hardest design problem was
+          trust: what should the AI do on its own, and what needs a human?
+          Drafting a customer update is safe to automate. Sending it is not.
+          Getting that line right shaped the whole assistant experience.
+        </p>
+      </section>
+
+      <figure class="shot">
+        <img
+          src="/images/pemly-assistant.png"
+          alt="Pemly Assistant drafting a customer update with an approve action visible"
+        />
+      </figure>
+
+      <section class="copy">
+        <h3>Built in Code, With AI</h3>
+        <p>
+          No Figma. No mockups. No handoff. I designed every interaction by
+          building the real thing and using it. And since the product's core
+          feature is an AI assistant, there was a compounding effect: I was
+          designing AI interactions while using AI to design. Each side
+          sharpened the other.
+        </p>
+        <p>
+          The result is a working product with live auth, real job channels,
+          and role-based views for owners, office, project managers, and crew.
+          The AI assistant experience is fully designed and prototyped in the
+          product while I build out the backend. All of it by one person.
+        </p>
+      </section>
+
+      <figure class="shot">
+        <img
+          src="/images/pemly-dashboard.png"
+          alt="The owner's daily picture view in Pemly showing everything that needs attention across all projects"
+        />
+      </figure>
+
+      <section class="copy">
+        <h3>What This Proves</h3>
+        <p>
+          <strong>It's live, not a concept.</strong> Private beta at pemly.app
+          with working auth, job channels, and role-based views for every
+          member of a home-service team. The assistant is prototyped in the
+          product today.
+        </p>
+        <p>
+          <strong>I know the user.</strong> Same tradespeople I've designed for
+          at Thryv and Keap, plus close friends who live this problem daily.
+        </p>
+        <p>
+          <strong>New interaction patterns, from scratch.</strong> The
+          assistant required inventing patterns for AI trust, approval, and
+          handoff. There was nothing to copy.
+        </p>
+        <p>
+          <strong>This is how I work now.</strong> Designed for the field.
+          Built in code. Shipped solo. AI at the core of the product and the
+          process.
+        </p>
+      </section>
+
+      <section class="copy">
+        <h3>Let's Connect 📬</h3>
+        <p>
+          If you want to hear more about this project,
+          <a href="contact.html">let's connect</a>.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-grid">
+          <div>
+            <h2>Let's Talk</h2>
+            <a class="say-hello" href="contact.html">Contact: Say Hello! 👋</a>
+          </div>
+          <div class="social">
+            <a
+              href="https://adplist.org/mentors/jonathan-bond"
+              target="_blank"
+              rel="noopener"
+              >ADPList</a
+            >
+            <a href="https://x.com/jrbond" target="_blank" rel="noopener">X</a>
+            <a
+              href="https://www.linkedin.com/in/jbond/"
+              target="_blank"
+              rel="noopener"
+              >Linkedin</a
+            >
+          </div>
+        </div>
+        <p class="copyright">© 2025 jrbond.com</p>
+        <p class="built-note">
+          This site was designed and built in code with Claude Code.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
