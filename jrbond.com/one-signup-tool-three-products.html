@@ -57,13 +57,34 @@
       *::after {
         box-sizing: border-box;
       }
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --fg: #242527;
+        --muted: #4f4f4f;
+        --pill-bg: #ededed;
+        --pill-bg-hover: #e0e0e0;
+        --border: #ededed;
+        --img-border: #d9d9d9;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f0f0f;
+          --fg: #f5f6f7;
+          --muted: #999999;
+          --pill-bg: #2e2e2e;
+          --pill-bg-hover: #3a3a3a;
+          --border: #303030;
+          --img-border: #303030;
+        }
+      }
       html {
         scroll-behavior: smooth;
       }
       body {
         margin: 0;
-        background: #ffffff;
-        color: #242527;
+        background: var(--bg);
+        color: var(--fg);
         font-family: "Inter", "Inter Placeholder", sans-serif;
         -webkit-font-smoothing: antialiased;
       }
@@ -78,14 +99,14 @@
         justify-content: space-between;
         gap: 24px;
         padding: 40px 40px 24px;
-        background: #ffffff;
+        background: var(--bg);
       }
       .nav .logo {
         font-family: "Manrope", "Manrope Placeholder", sans-serif;
         font-size: 24px;
         font-weight: 500;
         line-height: 36px;
-        color: #242527;
+        color: var(--fg);
         text-decoration: none;
       }
       .nav .links {
@@ -98,7 +119,7 @@
       .nav .links a {
         font-size: 18px;
         line-height: 27px;
-        color: #242527;
+        color: var(--fg);
         text-decoration: none;
       }
       .nav .links a:hover {
@@ -107,14 +128,14 @@
       .nav .contact-pill {
         font-size: 18px;
         line-height: 24px;
-        color: #242527;
+        color: var(--fg);
         text-decoration: none;
-        background: #ededed;
+        background: var(--pill-bg);
         border-radius: 32px;
         padding: 14px 24px;
       }
       .nav .contact-pill:hover {
-        background: #e0e0e0;
+        background: var(--pill-bg-hover);
       }
       .container {
         max-width: 1440px;
@@ -138,7 +159,7 @@
         font-size: 24px;
         font-weight: 500;
         line-height: 36px;
-        color: #4f4f4f;
+        color: var(--muted);
         margin: 0 0 56px;
         max-width: 1100px;
       }
@@ -151,7 +172,7 @@
       .meta .label {
         font-size: 16px;
         line-height: 24px;
-        color: #4f4f4f;
+        color: var(--muted);
         margin: 0 0 16px;
       }
       .meta p {
@@ -166,7 +187,7 @@
         display: block;
         width: 100%;
         height: auto;
-        border: 1px solid #d9d9d9;
+        border: 1px solid var(--img-border);
         border-radius: 16px;
       }
       section.copy {
@@ -183,20 +204,20 @@
       section.copy p {
         font-size: 18px;
         line-height: 27px;
-        color: #4f4f4f;
+        color: var(--muted);
         margin: 0 0 24px;
       }
       section.copy strong {
-        color: #242527;
+        color: var(--fg);
         font-weight: 600;
       }
       section.copy a {
-        color: #242527;
+        color: var(--fg);
         text-decoration: underline;
       }
       .footer {
         margin-top: 96px;
-        border-top: 1px solid #ededed;
+        border-top: 1px solid var(--border);
         padding: 96px 0 48px;
       }
       .footer .footer-grid {
@@ -217,14 +238,14 @@
         display: inline-block;
         font-size: 18px;
         line-height: 24px;
-        color: #242527;
+        color: var(--fg);
         text-decoration: none;
-        background: #ededed;
+        background: var(--pill-bg);
         border-radius: 32px;
         padding: 14px 24px;
       }
       .footer .say-hello:hover {
-        background: #e0e0e0;
+        background: var(--pill-bg-hover);
       }
       .footer .social {
         display: flex;
@@ -235,7 +256,7 @@
       .footer .social a {
         font-size: 18px;
         line-height: 27px;
-        color: #242527;
+        color: var(--fg);
         text-decoration: none;
       }
       .footer .social a:hover {
@@ -245,13 +266,13 @@
         margin-top: 72px;
         font-size: 18px;
         line-height: 27px;
-        color: #242527;
+        color: var(--fg);
       }
       .built-note {
         margin-top: 16px;
         font-size: 14px;
         line-height: 21px;
-        color: #4f4f4f;
+        color: var(--muted);
       }
       @media (max-width: 809px) {
         .nav {
