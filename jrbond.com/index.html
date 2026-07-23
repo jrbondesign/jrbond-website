@@ -14065,13 +14065,23 @@
          the exact rendered styles. -->
     <script>
       (function () {
+        var AI_SVG =
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">' +
+          '<rect width="1200" height="750" fill="#141414"/>' +
+          '<g stroke="#262626" stroke-width="1"><path d="M0 250H1200M0 500H1200M300 0V750M600 0V750M900 0V750"/></g>' +
+          '<g transform="translate(600 330)">' +
+          '<rect x="-52" y="-8" width="104" height="82" rx="12" fill="#2a2a2a"/>' +
+          '<path d="M-32 -8 V-30 a32 32 0 0 1 64 0 V-8" fill="none" stroke="#5f5f5f" stroke-width="12"/>' +
+          '<circle cy="28" r="10" fill="#8a8a8a"/><rect x="-4" y="34" width="8" height="20" rx="4" fill="#8a8a8a"/></g>' +
+          '<text x="600" y="470" fill="#7a7a7a" font-family="Inter,Arial,sans-serif" font-size="30" letter-spacing="4" text-anchor="middle">PRIVATE</text>' +
+          '</svg>';
         var CARDS = [
           {
-            href: "designing-slack-for-the-trades.html",
-            img: "/images/pemly-hero.png",
-            alt: "Pemly, an AI-powered job communication app for home-service crews",
-            title: "Designing Slack for the Trades, Solo, in Code",
-            desc: "I designed and built Pemly, an AI-powered job communication app for home-service crews, without opening Figma once."
+            href: "/work/ph-0b06105b.html",
+            img: "data:image/svg+xml;utf8," + encodeURIComponent(AI_SVG),
+            alt: "A private, password-protected set of projects",
+            title: "AI Projects",
+            desc: "A private, password-protected selection of AI-native product work. Ask me for the password."
           },
           {
             href: "one-signup-tool-three-products.html",
