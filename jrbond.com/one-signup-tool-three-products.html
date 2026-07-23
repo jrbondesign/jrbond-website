@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Jonathan Bond - Work - Ward Signup</title>
+    <meta
+      name="description"
+      content="I designed, built, and shipped a scheduling tool for ward secretaries using Claude Code. Then the same foundation shipped twice more."
+    />
+    <link rel="icon" href="/images/UW0H2OtQl7EdKLqyhQs26GI2Y.png" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jonathan Bond - Work - Ward Signup" />
+    <meta
+      property="og:description"
+      content="I designed, built, and shipped a scheduling tool for ward secretaries using Claude Code. Then the same foundation shipped twice more."
+    />
+    <meta property="og:image" content="/images/wardsignup-hero.png" />
+    <meta property="og:url" content="https://jrbond.com/one-signup-tool-three-products" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jonathan Bond - Work - Ward Signup" />
+    <meta
+      name="twitter:description"
+      content="I designed, built, and shipped a scheduling tool for ward secretaries using Claude Code. Then the same foundation shipped twice more."
+    />
+    <meta name="twitter:image" content="/images/wardsignup-hero.png" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RQP6FPG44H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-RQP6FPG44H");
+    </script>
+
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="canonical" href="one-signup-tool-three-products.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      :root {
+        color-scheme: dark;
+        --bg: #ffffff;
+        --fg: #242527;
+        --muted: #4f4f4f;
+        --pill-bg: #ededed;
+        --pill-bg-hover: #e0e0e0;
+        --border: #ededed;
+        --img-border: #d9d9d9;
+      }
+      @media all {
+        :root {
+          --bg: #0f0f0f;
+          --fg: #f5f6f7;
+          --muted: #999999;
+          --pill-bg: #2e2e2e;
+          --pill-bg-hover: #3a3a3a;
+          --border: #303030;
+          --img-border: #303030;
+        }
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "Inter", "Inter Placeholder", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 40px 40px 24px;
+        background: var(--bg);
+      }
+      .nav .logo {
+        font-family: "Manrope", "Manrope Placeholder", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 36px;
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .nav .links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 48px;
+      }
+      .nav .links a {
+        font-size: 18px;
+        line-height: 27px;
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .nav .links a:hover {
+        text-decoration: underline;
+      }
+      .nav .contact-pill {
+        font-size: 18px;
+        line-height: 24px;
+        color: var(--fg);
+        text-decoration: none;
+        background: var(--pill-bg);
+        border-radius: 32px;
+        padding: 14px 24px;
+      }
+      .nav .contact-pill:hover {
+        background: var(--pill-bg-hover);
+      }
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+      .hero {
+        padding-top: 220px;
+      }
+      h1 {
+        font-family: "Manrope", "Manrope Placeholder", sans-serif;
+        font-size: 72px;
+        font-weight: 500;
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+        margin: 0 0 40px;
+        max-width: 1100px;
+      }
+      .subtitle {
+        font-family: "Manrope", "Manrope Placeholder", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 36px;
+        color: var(--muted);
+        margin: 0 0 56px;
+        max-width: 1100px;
+      }
+      .meta {
+        display: grid;
+        grid-template-columns: 190px 220px 200px minmax(0, 1fr);
+        gap: 40px 64px;
+        margin-bottom: 72px;
+      }
+      .meta .label {
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+      .meta p {
+        font-size: 18px;
+        line-height: 27px;
+        margin: 0 0 12px;
+      }
+      .shot {
+        margin: 32px 0 64px;
+      }
+      .shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--img-border);
+        border-radius: 16px;
+      }
+      section.copy {
+        max-width: 1100px;
+        margin: 0 0 48px;
+      }
+      h3 {
+        font-family: "Manrope", "Manrope Placeholder", sans-serif;
+        font-size: 44px;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 48px 0 24px;
+      }
+      section.copy p {
+        font-size: 18px;
+        line-height: 27px;
+        color: var(--muted);
+        margin: 0 0 24px;
+      }
+      section.copy strong {
+        color: var(--fg);
+        font-weight: 600;
+      }
+      section.copy .hl {
+        color: var(--fg);
+      }
+      section.copy a {
+        color: var(--fg);
+        text-decoration: underline;
+      }
+      .footer {
+        margin-top: 96px;
+        border-top: 1px solid var(--border);
+        padding: 96px 0 48px;
+      }
+      .footer .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 48px;
+        flex-wrap: wrap;
+      }
+      .footer h2 {
+        font-family: "Manrope", "Manrope Placeholder", sans-serif;
+        font-size: 56px;
+        font-weight: 400;
+        line-height: 1.15;
+        margin: 0 0 40px;
+      }
+      .footer .say-hello {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 24px;
+        color: var(--fg);
+        text-decoration: none;
+        background: var(--pill-bg);
+        border-radius: 32px;
+        padding: 14px 24px;
+      }
+      .footer .say-hello:hover {
+        background: var(--pill-bg-hover);
+      }
+      .footer .social {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 32px;
+      }
+      .footer .social a {
+        font-size: 18px;
+        line-height: 27px;
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .footer .social a:hover {
+        text-decoration: underline;
+      }
+      .footer .copyright {
+        margin-top: 72px;
+        font-size: 18px;
+        line-height: 27px;
+        color: var(--fg);
+      }
+      .built-note {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 21px;
+        color: var(--muted);
+      }
+      @media (max-width: 809px) {
+        .nav {
+          padding: 20px 24px 16px;
+        }
+        .nav .links {
+          position: static;
+          transform: none;
+          gap: 24px;
+        }
+        .nav .contact-pill {
+          padding: 10px 18px;
+          font-size: 16px;
+        }
+        .container {
+          padding: 0 24px;
+        }
+        .hero {
+          padding-top: 140px;
+        }
+        h1 {
+          font-size: 40px;
+        }
+        .subtitle {
+          font-size: 20px;
+          line-height: 30px;
+        }
+        .meta {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .nav .logo {
+          font-size: 20px;
+          line-height: 28px;
+          white-space: nowrap;
+        }
+        h3 {
+          font-size: 30px;
+        }
+        .footer h2 {
+          font-size: 40px;
+        }
+        .footer .social {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="logo" href="index.html">Jonathan Bond</a>
+      <div class="links">
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+      </div>
+      <a class="contact-pill" href="contact.html">Contact</a>
+    </nav>
+
+    <main class="container">
+      <header class="hero">
+        <h1>Shipped Solo: How One Signup Tool Became Three Products</h1>
+        <p class="subtitle">
+          I designed, built, and shipped a scheduling tool for ward
+          secretaries using Claude Code. Then the same foundation shipped
+          twice more.
+        </p>
+        <div class="meta">
+          <div>
+            <p class="label">COMPANY</p>
+            <p>Ward Signup (personal product)</p>
+          </div>
+          <div>
+            <p class="label">MY ROLE</p>
+            <p>Designer, Builder, Everything Else</p>
+          </div>
+          <div>
+            <p class="label">TEAM</p>
+            <p>Me and Claude Code</p>
+          </div>
+          <div>
+            <p class="label">RESULTS</p>
+            <p>Live at wardsignup.com</p>
+            <p>Zero-login signup, as easy as the paper sheet it replaces</p>
+            <p>Same foundation now powers ministrysignup.com and orgsignup.com</p>
+            <p>No Figma, designed entirely in code</p>
+          </div>
+        </div>
+      </header>
+
+      <figure class="shot">
+        <img
+          src="/images/wardsignup-hero.png"
+          alt="The wardsignup.com homepage hero"
+        />
+      </figure>
+
+      <section class="copy">
+        <h3>Executive Summary</h3>
+        <p>
+          Ward Signup started with something I watched every Sunday: a ward
+          secretary passing around a paper signup sheet, then spending the week
+          chasing people down and deciphering handwriting. Digital tools
+          existed, but they all required accounts, downloads, or training.
+          Dealbreakers when your users range from teenagers to grandparents.
+        </p>
+        <p>
+          I designed and built the whole product with Claude Code. No mockups,
+          no handoff, no engineering team. A secretary creates an event with
+          time slots in minutes and shares one link. Members sign up by typing
+          their name. No accounts, no app. <span class="hl">As easy as the paper sheet, without
+          the chasing.</span>
+        </p>
+      </section>
+
+      <section class="copy">
+        <h3>The Sunday Problem</h3>
+        <p>
+          <strong>Background</strong>: Ward secretaries coordinate everything
+          from tithing declaration appointments to missionary dinners to
+          service shifts. The default tools are a paper sheet or a chaotic
+          group text. Signups get missed, slots get double-booked, and <span class="hl">the
+          secretary becomes a human tracking system.</span>
+        </p>
+        <p>
+          <strong>The catch</strong>: Every existing tool added friction that
+          killed adoption. Requiring a login to sign up for a nursery shift is
+          a non-starter. The tool had to be simpler than paper or people would
+          go back to paper.
+        </p>
+      </section>
+
+      <figure class="shot">
+        <img
+          src="/images/wardsignup-create.png"
+          alt="The Ward Signup event creation flow with a date range, weekdays, and time slots"
+        />
+      </figure>
+
+      <section class="copy">
+        <h3>Designing for the Least Technical User</h3>
+        <p>
+          <strong>The secretary is the customer. Everyone is the user.</strong>
+          Two very different people: the secretary who creates and manages
+          events, and the member who just needs a spot. The secretary gets an
+          account, a dashboard, and tracking. The member gets a link and a name
+          field. All the complexity sits with the person who signed up for it.
+          That asymmetry is the whole product.
+        </p>
+        <p>
+          <strong>No logins for members, ever.</strong> The most important
+          decision I made. Click the link, pick a slot, type your name. Done.
+          This one constraint shaped everything else, and <span class="hl">it's why this works
+          where other tools fail.</span>
+        </p>
+        <p>
+          <strong>Spots that manage themselves.</strong> Slots close
+          automatically when full. No double-booking, no spreadsheet
+          refreshing. The system does the tracking so a person doesn't have to.
+        </p>
+        <p>
+          <strong>One link, everywhere.</strong> Email, text, or printed in the
+          bulletin. Meet people where they are.
+        </p>
+      </section>
+
+      <figure class="shot">
+        <img
+          src="/images/wardsignup-signup.png"
+          alt="The member signup view on a phone: pick a slot and type your name, no login required"
+        />
+      </figure>
+
+      <section class="copy">
+        <h3>Built with Claude Code, Start to Finish</h3>
+        <p>
+          This product never touched Figma. I designed directly in code,
+          building real interactions, testing them live, and iterating on the
+          actual product instead of a picture of it. Design debates got
+          settled by using the thing.
+        </p>
+        <p>
+          The workflow was fast enough that I took it from idea to production
+          alone. The same foundation now powers ministrysignup.com and
+          orgsignup.com. Same scheduling problem, different organizations. <span class="hl">One
+          design decision, three shipped products.</span>
+        </p>
+      </section>
+
+      <figure class="shot">
+        <img
+          src="/images/wardsignup-dashboard.png"
+          alt="The secretary's dashboard tracking signups across events"
+        />
+      </figure>
+
+      <section class="copy">
+        <h3>What This Proves</h3>
+        <p>
+          <strong>Shipped and live.</strong> In production at wardsignup.com,
+          free during beta, handling real scheduling for real wards.
+        </p>
+        <p>
+          <strong>Frictionless by design.</strong> If you can type your name,
+          you can sign up. No support burden, no training.
+        </p>
+        <p>
+          <strong>One product became three.</strong> The core generalized to
+          ministrysignup.com and orgsignup.com, which proved the design
+          instead of documenting it.
+        </p>
+        <p>
+          <strong>Design-in-code isn't theoretical for me.</strong> One person,
+          idea to production, with Claude Code. This is how I work.
+        </p>
+      </section>
+
+      <section class="copy">
+        <h3>Let's Connect 📬</h3>
+        <p>
+          If you want to hear more about this project,
+          <a href="contact.html">let's connect</a>.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-grid">
+          <div>
+            <h2>Let's Talk</h2>
+            <a class="say-hello" href="contact.html">Contact: Say Hello! 👋</a>
+          </div>
+          <div class="social">
+            <a
+              href="https://adplist.org/mentors/jonathan-bond"
+              target="_blank"
+              rel="noopener"
+              >ADPList</a
+            >
+            <a href="https://x.com/jrbond" target="_blank" rel="noopener">X</a>
+            <a
+              href="https://www.linkedin.com/in/jbond/"
+              target="_blank"
+              rel="noopener"
+              >Linkedin</a
+            >
+          </div>
+        </div>
+        <p class="copyright">© 2025 jrbond.com</p>
+        <p class="built-note">
+          This site was designed and built in code with Claude Code.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
