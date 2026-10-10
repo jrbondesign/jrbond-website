@@ -327,6 +327,19 @@
           align-items: flex-start;
         }
       }
+      /* Responsive fixes: consistent side padding, larger tap targets, no nav overflow on small phones */
+      .footer.container{padding-left:60px;padding-right:60px;}
+      .nav .links a,.footer .social a{display:inline-flex;align-items:center;min-height:44px;}
+      .footer .social{gap:8px;}
+      section.copy a{display:inline-block;padding:11px 0;margin:-11px 0;}
+      @media (max-width:809px){.footer.container{padding-left:24px;padding-right:24px;}}
+      @media (max-width:480px){
+        .nav{flex-wrap:wrap;row-gap:0;}
+        .nav .links{order:3;width:100%;gap:24px;}
+        .hero{padding-top:180px;}
+        .proj{padding-top:150px;}
+        .proj .hero{padding-top:24px;}
+      }
     </style>
   </head>
   <body>
