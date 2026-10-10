@@ -100,6 +100,16 @@
         .proj .hero{padding-top:24px;}
       }
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQP6FPG44H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      // page_view is sent manually below so each view (gate, index, project detail) counts exactly once
+      gtag("config", "G-RQP6FPG44H", { send_page_view: false });
+    </script>
   </head>
   <body>
     <div class="gate" id="gate">
@@ -164,10 +174,27 @@
         view.innerHTML = '<div class="proj"><a class="backlink" href="#/">&larr; All AI projects</a>' + p.body + '</div>';
         window.scrollTo(0,0);
       }
+      // Analytics: virtual page views per project detail, deduped so each view counts once
+      var SHELL_PATH = "/work/ph-0b06105b.html", SLUGS = ["pemly","partner-hub","comark"], lastPath = null;
+      function trackView(path, title){
+        if(path === lastPath || typeof gtag !== "function") return;
+        lastPath = path;
+        gtag("event", "page_view", { page_path: path, page_location: location.origin + path, page_title: title });
+      }
+      function trackCurrent(){
+        var m = /^#\/p(\d+)$/.exec(location.hash || "");
+        if(m && PROJECTS && PROJECTS[+m[1]]){
+          var i = +m[1];
+          trackView("/work/ai/" + (SLUGS[i] || ("project-" + (i + 1))), "AI projects: " + PROJECTS[i].title);
+        } else {
+          trackView(SHELL_PATH, "AI projects");
+        }
+      }
       function route(){
         if(!PROJECTS) return;
         var m = /^#\/p(\d+)$/.exec(location.hash || "");
         if(m){ renderProject(+m[1]); } else { renderIndex(); }
+        trackCurrent();
       }
       window.addEventListener("hashchange", route);
       function enter(){ gate.remove(); app.hidden = false; route(); }
@@ -177,6 +204,7 @@
           var payload = JSON.parse(await decrypt(pw.value));
           PROJECTS = payload.projects;
           try{ sessionStorage.setItem(SKEY, pw.value); }catch(_){}
+          if(typeof gtag === "function"){ gtag("event", "portfolio_unlocked"); }
           enter();
         }catch(ex){
           err.textContent="That password didn't work. Try again.";
@@ -186,12 +214,12 @@
       // auto-unlock for the rest of the tab session (survives refresh / back button / leaving and returning)
       (async function(){
         var saved; try{ saved = sessionStorage.getItem(SKEY); }catch(_){ saved = null; }
-        if(!saved) return;
+        if(!saved){ trackView(SHELL_PATH, "AI projects"); return; }
         try{
           var payload = JSON.parse(await decrypt(saved));
           PROJECTS = payload.projects;
           enter();
-        }catch(ex){ try{ sessionStorage.removeItem(SKEY); }catch(_){} }
+        }catch(ex){ try{ sessionStorage.removeItem(SKEY); }catch(_){} trackView(SHELL_PATH, "AI projects"); }
       })();
     </script>
   </body>
